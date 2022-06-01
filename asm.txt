@@ -1,0 +1,113 @@
+; -- Experiment 10 Ratsim assembly code
+; -- we used data storage in scratch to implement number system.
+; -- The r10 and r11 values hold the binary count of the ones
+; -- and tens plus 10, respectively.
+
+.EQU SEGS     = 0x82
+.EQU DISP_EN  = 0x83
+.EQU BTN      = 0x24
+
+.EQU TCCR	  = 0xB5
+.EQU TCNT0	  = 0xB0
+.EQU TCNT1	  = 0xB1
+.EQU TCNT2	  = 0xB2
+
+
+.DSEG
+.ORG 0x00	 		;start data storage at 01
+
+.DB      0x03, 0x9F, 0x25, 0x0D, 0x99	;stores data in scratch ram
+.DB      0x49, 0x41, 0x1F, 0x01, 0x09
+
+.DB      0x49, 0x41, 0x1F, 0x01, 0x09
+
+.CSEG
+.ORG 0x40			; made it start much longer than needed, could've been about 0x15
+
+
+
+init:		CLI						; clears interrupts
+			MOV		r12,0xFF
+			MOV		r13,0xFF
+			MOV		r14,0xFF
+			MOV		r15,0x02
+			OUT		r12,TCCR
+			OUT		r12,TCNT0
+			OUT		r12,TCNT1
+			OUT		r12,TCNT2
+
+			MOV		r6,0x00			; stores display thing
+			MOV		r5,0x00			; stores button
+			MOV		r2,0x0E			; stores value for anodes
+			MOV		r3,0x0D			; stores value for anodes
+			MOV		r4,0xFF			; stores a clear anodes
+			MOV		r10,0x00		; ones bcd initializes to scr addr w/ "zero" 7seg signals
+			MOV		r11,0x00		; tens, holds bcd same as above
+			LD		r0,(r10)		; puts 7seg value in scratch @ r10 into r0
+			LD		r1,(r11) 		; puts 7seg value in scratch @ r11 into r1
+
+loop:		IN 		r5,BTN
+			AND		r5,0x01
+			CMP		r5,0x00
+			BREQ	loop
+			
+			CALL	wait
+
+			IN 		r5,BTN
+			AND		r5,0x01
+			CMP		r5,0x00
+			BRNE	loop
+
+			ADD		r10,0x01		; adds one to ones register
+			CMP		r10,0x0A		; compares value to the scratch address after one holding 9 data
+			BRNE	load			; branches to loading state if values not equal
+
+			MOV		r10,0x00		; effectively resets ones digit if last digit was 9
+			ADD		r11,0x01		; adds one to the tens register
+			CMP		r11,0x05		; compares value to see if it holds the 5 value
+			BRNE	load			; branches to loading state if tens is not equal to 5
+
+			MOV		r11,0x00		; resets 10s register if no branch
+load:		LD		r0,(r10)		; loads 1's reg
+			LD		r1,(r11)		; loads 10's reg
+			BRN		loop			; return to top
+
+
+
+
+ISR:		CMP		r6,0x00
+			BRNE	AN0
+
+			OUT		r1,SEGS			; outputs r1
+			OUT		r3, DISP_EN		; sets tens anode on
+			CALL	wait			; wait
+			OUT		r4, DISP_EN
+			EXOR	r6,0x01
+			RETIE
+			
+
+AN0:		OUT		r0,SEGS			; outputs r0
+			OUT		r2, DISP_EN		; sets ones anode on
+			CALL	wait			; waits
+			OUT		r4, DISP_EN
+			EXOR	r6,0x01
+			RETIE
+			
+
+
+wait:		MOV		r30,0x40		;a bunch of wait states to prevent
+loope:		SUB		r30,0x01		;  ghosting
+			MOV		r31,0x30
+looper:		SUB		r31,0x01
+			BRNE	looper
+			SUB		r30,0x01
+			BRNE    loope
+			RET
+	
+
+
+.CSEG
+.ORG  0x3FF
+        BRN    ISR					;isr
+
+
