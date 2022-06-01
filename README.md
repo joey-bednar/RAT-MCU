@@ -1,8 +1,8 @@
 # RAT Microcontroller
 
-The RAT MCU is a basic computer that written in VHDL and run on the Basys 3 development board.
+The RAT MCU is a basic computer that written in VHDL and run on the Basys 3 FPGA development board. Programs are written in assembly and converted to prog_rom.vhd files via the RAT Assembler. The MCU Architecture is displayed below.
 
-![alt text](https://github.com/joey-bednar/RAT-MCU/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/joey-bednar/RAT-MCU/blob/main/rat_diagram.jpg?raw=true)
 
 ## File Descriptions
 
