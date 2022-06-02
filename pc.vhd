@@ -1,10 +1,3 @@
-----------------------------------------------------------------------------------
---Chris L, Joey B
-
---Program Counter
--- Our Program counter, controls all of the instruction processes.
-----------------------------------------------------------------------------------
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

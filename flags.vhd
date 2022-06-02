@@ -1,23 +1,3 @@
-------------------------------------------------------------------------------
--- Company: RAT Technologies
--- Engineer: James Ratner
--- 
--- Create Date:    13:55:34 04/06/2014 
--- Design Name: 
--- Module Name:    Mux - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: Full featured D Flip-flop intended for use as flag register. 
---
--- Dependencies: 
---
--- Revision: 3.0
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-------------------------------------------------------------------------------
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

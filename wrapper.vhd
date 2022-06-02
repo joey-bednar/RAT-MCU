@@ -1,34 +1,3 @@
--------------------------------------------------------------------------------
--- Company:  RAT Technologies
--- Engineer:  Various RAT rats
--- 
--- Create Date:    1/31/2012
--- Design Name: 
--- Module Name:    RAT_wrapper - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: Wrapper for RAT MCU. This model provides an interface 
---    for the RAT MCU to the Basys3 development board. 
--- 
---    Note: RESET - mapped to middle button on Basys3 board
---       
---          INT - interrupt pin, tied to '0';  
---
---    Note: this version does not utilized all 16 switches and 16 LEDs
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Revision 1.01 - Updated file to support Basys3 board  (11-15-2016)
---               - Added s_output_port to sensitivity list
---               - Added support for clock divider
--- Revision 2.00 - Updated to support all LEDs and switches on 
---                   Basys3 board  (11-20-2016)
--- Additional Comments: 
---
--------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;

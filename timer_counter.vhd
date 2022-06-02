@@ -1,13 +1,4 @@
 ----------------------------------------------------------------------------------
--- Company:  Ratner Engineering
--- Engineer:  James Ratner
--- 
--- Create Date:    12:24:42 02/24/2013 
--- Design Name: 
--- Module Name:    timer_counter - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
 -- Description: This file implements a timer counter module. The input is any 
 --    clock signal. The output is a 2-clock cycle wide pulse (using the system 
 --    clock. The timer has a pre-scaler divides the clock from 0 to 15 before 
@@ -15,17 +6,6 @@
 --    is implemented as an upcounter. The 24-bit value starts at zero, counts
 --    to value set in TCNT2 & TCNT1 TCNT0 and then generates pulse which can 
 --    be used to trigger an interrupt.
---
---    The TCCR register holds both a count enable (bit(7)) and prescale value
---    (bits(3:0));  
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;

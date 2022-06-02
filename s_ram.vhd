@@ -1,23 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: RAT Technologies 
--- Engineer: James Ratner
--- 
--- Create Date:    03:44:42 02/17/2015 
--- Design Name: 
--- Module Name:    RAM
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: Generic 256x10 RAM with synchronous writes and 
---              asynchronous reads.  
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;

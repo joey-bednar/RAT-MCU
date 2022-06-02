@@ -1,10 +1,3 @@
-----------------------------------------------------------------------------------
---Chris Lim, Joey Bednar
-
---Counter component
--- altered counter with an added load component
-----------------------------------------------------------------------------------
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;

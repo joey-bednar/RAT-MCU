@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: Ratner Engineering
--- Engineer: James Ratner
--- 
--- Create Date:    20:59:29 02/04/2013 
--- Design Name: 
--- Module Name:    RAT_MCU - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: Starter MCU file for RAT MCU. 
---
--- Dependencies: 
---
--- Revision: 3.00
--- Revision: 4.00 (08-24-2016): removed support for multibus
--- Revision: 4.01 (11-01-2016): removed PC_TRI reference
--- Revision: 4.02 (11-15-2016): added SCR_DATA_SEL 
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;

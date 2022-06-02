@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company:  RAT Technologies 
--- Engineer:  James Ratner
--- 
--- Create Date:    20:09:32 01/24/2013 
--- Design Name: 
--- Module Name:    RegisterFile
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description:  Example dual-port RAM. This RAM can read from 
---               two different locations and write one location (the 
---               "X" channel). 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;

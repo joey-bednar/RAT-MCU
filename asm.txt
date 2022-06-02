@@ -1,7 +1,4 @@
 ; -- Experiment 10 Ratsim assembly code
-; -- we used data storage in scratch to implement number system.
-; -- The r10 and r11 values hold the binary count of the ones
-; -- and tens plus 10, respectively.
 
 .EQU SEGS     = 0x82
 .EQU DISP_EN  = 0x83

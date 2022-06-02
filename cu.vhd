@@ -1,25 +1,3 @@
-----------------------------------------------------------------------------------
--- Company:   CPE 233 Productions
--- Engineer:  Various Engineers
--- 
--- Create Date:    20:59:29 02/04/2013 
--- Design Name: 
--- Module Name:    RAT Control Unit
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description:  Control unit (FSM) for RAT CPU
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Revision 4.02 - added SCR_DATA_SEL (11-04-2016)
--- Revision 4.03 - removed NS from comb_proc (11-15-2016)
--- Revision 4.04 - made reset synchronous (10-12-2017)
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
